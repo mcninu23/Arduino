@@ -16,7 +16,7 @@ struct point {
 	long double x,y;
 };
 
-struct point3d {
+struct vect {
 	long double x,y,z;
 };
 

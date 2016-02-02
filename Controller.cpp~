@@ -11,5 +11,5 @@ Controller::Controller(){
 
 
 void Controller::setPos(real x, real y, real z){
-	this->position.setValue(x,y,z);
+	this->position.setPos(x,y,z);
 }
