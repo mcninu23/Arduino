@@ -31,7 +31,7 @@ public:
 	Engine(byte_t map[], DriveMode mode); // Main constructor.
 	Engine(byte_t map[], DriveMode mode, byte_t count); // This also sets the phase count.
 	
-	short getPhase(); // Returns the step phase of the engine.
+	byte_t getPhase(); // Returns the step phase of the engine.
 	void stepUp(); // Drives the engine one step forward
 	void stepDown(); // Drives the engine one step backward
 	void resetAngle(); // Sets the absolute angle to 0
@@ -46,7 +46,7 @@ private:
 	byte_t phase; // This is the step phase of the engine.
 	DriveMode driveMode; // How the engine is being driven.
 	long int angle; // This is how many steps the engine has gone forward or backward, from the origin.
-	short phaseCount; // How many phases does have the engine.
+	char phaseCount; // How many phases does have the engine.
 	byte_t *pinMapping; // Byte array to set the output.
 	long double throle; // The forward/backwards throle (-1.0, 0.0, 1.0)
 	long int targetAngle = 0; // The target angle if gotoAngle() is invoked.

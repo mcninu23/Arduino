@@ -46,10 +46,10 @@ void Engine::stepUp(){
 }
 
 void Engine::stepDown(){
-	this->phase--;
-	this->angle--;
+	this->phase -= 1;
+	this->angle -= 1;
 	if (this->phase < 0){
-		this->phase = this->phaseCount - 1;
+		this->phase = 3;//this->phaseCount - 1;
 	}
 	this->setCoilOutput();
 }

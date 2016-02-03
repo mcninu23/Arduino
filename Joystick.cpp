@@ -4,6 +4,7 @@
  */
 
 #define __PINSET(x) pinMode(this->axisXPin, x); pinMode(this->axisYPin, x); pinMode(this->buttonPin, x); 
+#define MAX_ANALOG 1024.0
 
 #include <Joystick.h>
 
@@ -55,8 +56,8 @@ point Joystick::getInput(){
 
 point Joystick::normalize(point raw){
 	point p;
-	p.x =  raw.x - 0.5;
-	p.y = raw.y - 0.5;
+	p.x =  (((raw.x/MAX_ANALOG)*2.0) - 0.5);
+	p.y = (((raw.y/MAX_ANALOG)*2.0) - 0.5);
 	return p;
 }
 
