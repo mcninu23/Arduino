@@ -5,6 +5,9 @@
 
 #include <Vector.h>
 
+#define __GET_DEC(a) ((float)this->a - (float)((int)this->a))
+#define SMART_CAST(u, str) if (__GET_DEC(u) > 0){ str = String((float)this->u); }else{ str = String((int)this->u); }
+
 Vector::Vector(){
 	this->x = 0;
 	this->y = 0;
@@ -63,12 +66,18 @@ real Vector::getZ(){
 }
 
 String Vector::toString(){
-	String a;
-	String X((float)this->x);
-	String Y((float)this->y);
-	String Z((float)this->z);
-	String sep(" , ");
-	return a + X + sep + Y + sep + Z;
+	
+	String X;
+	SMART_CAST(x, X)
+	String Y;
+	SMART_CAST(y, Y)
+	String Z;
+	SMART_CAST(z, Z)
+	
+	String a("( ");
+	String sep(", ");
+	String b(" )");
+	return a + X + sep + Y + sep + Z + b;
 }
 
 

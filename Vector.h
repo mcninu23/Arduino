@@ -10,6 +10,7 @@
 #define __VECTOR_H_3D
 
 #include <Common.h>
+#include <stdlib.h>
 
 typedef long double real;
 

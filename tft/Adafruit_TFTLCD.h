@@ -12,7 +12,7 @@
  #include "WProgram.h"
 #endif
 
-#include <Adafruit_GFX.h>
+#include "../gfx/Adafruit_GFX.h"
 
 // **** IF USING THE LCD BREAKOUT BOARD, COMMENT OUT THIS NEXT LINE. ****
 // **** IF USING THE LCD SHIELD, LEAVE THE LINE ENABLED:             ****
